@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements IMainActivity{
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction()
                 .replace(R.id.main_container, fragment, getString(R.string.fragment_view_product));
+        transaction.addToBackStack(getString(R.string.fragment_view_product));
         transaction.commit();
 
     }

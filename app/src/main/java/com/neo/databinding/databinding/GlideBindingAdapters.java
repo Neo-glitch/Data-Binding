@@ -17,7 +17,7 @@ public class GlideBindingAdapters {
 
 
     @BindingAdapter("imageUrl")
-    public static void setImage(ImageView view, int imageUrl){
+    public static void setImage(ImageView view, int imageUrl) {
         Context context = view.getContext();
 
         // for customization if needed before using glide
@@ -32,7 +32,7 @@ public class GlideBindingAdapters {
     }
 
     @BindingAdapter("imageUrl")
-    public static void setImage(ImageView view, String imageUrl){     // overload of string ImageUrl
+    public static void setImage(ImageView view, String imageUrl) {     // overload of string ImageUrl
         Context context = view.getContext();
 
         // for customization if needed before using glide
@@ -45,4 +45,21 @@ public class GlideBindingAdapters {
                 .load(imageUrl)
                 .into(view);
     }
+
+    @BindingAdapter({"requestListener", "imageResource"})
+    public static void bindRequestListener(ImageView view, RequestListener requestListener, int imageResource) {     // overload of string ImageUrl
+        Context context = view.getContext();
+
+        // for customization if needed before using glide
+        RequestOptions options = new RequestOptions()
+                .placeholder(R.drawable.ic_launcher_background)
+                .error(R.drawable.ic_launcher_background);
+
+        Glide.with(context)
+                .setDefaultRequestOptions(options)
+                .load(imageResource)
+                .listener(requestListener)
+                .into(view);
+    }
+
 }

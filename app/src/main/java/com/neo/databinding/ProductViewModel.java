@@ -51,21 +51,22 @@ public class ProductViewModel extends BaseObservable {
         notifyPropertyChanged(BR.imageVisibility);
     }
 
-//    /**
-//     * Request listener interface for glide to tell when image is done loading
-//     */
-//    public RequestListener getCustomRequestListener(){
-//        return new RequestListener() {
-//            @Override
-//            public boolean onLoadFailed(GlideException e, Object model, Target target, boolean isFirstResource) {
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onResourceReady(Object resource, Object model, Target target, DataSource dataSource, boolean isFirstResource) {
-//                setImageVisibility(true);
-//                return false;
-//            }
-//        };
-//    }
+    /**
+     * Request listener interface for glide to tell when image is done loading
+     */
+    public RequestListener getCustomRequestListener(){
+        return new RequestListener() {
+            @Override
+            public boolean onLoadFailed(GlideException e, Object model, Target target, boolean isFirstResource) {
+                setImageVisibility(true);
+                return false;
+            }
+
+            @Override
+            public boolean onResourceReady(Object resource, Object model, Target target, DataSource dataSource, boolean isFirstResource) {
+                setImageVisibility(true);
+                return false;
+            }
+        };
+    }
 }

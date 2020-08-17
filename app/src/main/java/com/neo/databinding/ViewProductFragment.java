@@ -1,5 +1,6 @@
 package com.neo.databinding;
 
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,8 +12,6 @@ import androidx.fragment.app.Fragment;
 
 import com.neo.databinding.databinding.FragmentViewProductBinding;
 import com.neo.databinding.models.Product;
-import com.neo.databinding.util.Products;
-
 
 /**
  * Created by User on 2/6/2018.
@@ -32,7 +31,7 @@ public class ViewProductFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Bundle bundle = this.getArguments();
-        if (bundle != null) {
+        if(bundle != null) {
             mProduct = bundle.getParcelable(getString(R.string.intent_product));
         }
     }
@@ -40,18 +39,20 @@ public class ViewProductFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mBinding = FragmentViewProductBinding.inflate(inflater);        // same as View view = inflater.inflate()
+        mBinding = FragmentViewProductBinding.inflate(inflater);
+        mBinding.setIMainActivity((IMainActivity)getActivity());        // associate the interface listener with the fragment
 
-        ProductViewModel productView = new ProductViewModel();
-        productView.setProduct(mProduct);
-        productView.setQuantity(1);
+        ProductViewModel productViewModel = new ProductViewModel();
+        productViewModel.setProduct(mProduct);
+        productViewModel.setQuantity(1);
 
-        mBinding.setProductView(productView);                                  // sets the productView obj(product and quantity) in the layout dataTag
+        mBinding.setProductView(productViewModel);
 
-        return mBinding.getRoot();                                      // must be done since this is a fragment, same as returning th view
+        return mBinding.getRoot();
     }
 
 }
+
 
 
 

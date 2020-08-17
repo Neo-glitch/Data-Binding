@@ -17,7 +17,6 @@ import com.neo.databinding.util.Products;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 
 /**
@@ -38,20 +37,17 @@ public class MainFragment extends Fragment implements SwipeRefreshLayout.OnRefre
         mBinding.swipeRefreshLayout.setOnRefreshListener(this);
 
         setupProductsList();
-
         return mBinding.getRoot();
     }
 
-    /**
-     * method to setup List to be assigned to the adapter
-     */
+
+
     private void setupProductsList(){
         Products products = new Products();
-        List<Product> productList = new ArrayList<>();
+        ArrayList<Product> productList = new ArrayList<>();
         productList.addAll(Arrays.asList(products.PRODUCTS));
-        mBinding.setProducts(productList);                              // assigns list to the list in xml
+        mBinding.setProducts(productList);
     }
-
 
 
     @Override
@@ -59,7 +55,7 @@ public class MainFragment extends Fragment implements SwipeRefreshLayout.OnRefre
         Products products = new Products();
         ArrayList<Product> productList = new ArrayList<>();
         productList.addAll(Arrays.asList(products.PRODUCTS));
-        ((ProductsAdapter) mBinding.recyclervView.getAdapter()).refreshList(productList);              // calls the adapter refreshList() method
+        ((ProductsAdapter)mBinding.recyclervView.getAdapter()).refreshList(productList);
         onItemsLoadComplete();
     }
 

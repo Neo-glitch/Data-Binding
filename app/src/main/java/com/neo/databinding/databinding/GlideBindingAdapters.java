@@ -46,7 +46,7 @@ public class GlideBindingAdapters {
                 .into(view);
     }
 
-    @BindingAdapter({"requestListener", "imageResource"})
+    @BindingAdapter({"requestListener", "imageResource"})                              // done this way since receives two params apart from View
     public static void bindRequestListener(ImageView view, RequestListener requestListener, int imageResource) {     // overload of string ImageUrl
         Context context = view.getContext();
 

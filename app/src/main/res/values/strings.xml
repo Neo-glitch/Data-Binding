@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TabianGifts</string>
+    <string name="app_name">DataBinding</string>
 
     <!-- dialog tags -->
     <string name="dialog_choose_quantity">Choose Quantity</string>

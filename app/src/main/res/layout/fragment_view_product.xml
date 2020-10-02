@@ -21,7 +21,7 @@
         android:background="@color/White">
 
 
-        // progress bar to show while the image is still loading, and gone when image done loading
+        <!--progress bar to show while the image is still loading, and gone when image done loading-->
         <ProgressBar
             android:layout_width="60dp"
             android:layout_height="60dp"
@@ -90,7 +90,7 @@
                 android:layout_height="200dp"
                 android:layout_marginTop="10dp">
 
-                // could have used .getCustomRequestListener instead for requestListner
+                <!-- could have used .getCustomRequestListener instead for requestListner-->
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

@@ -67,7 +67,7 @@ public class ViewCartFragment extends Fragment {
 
     @Override
     public void onDestroy() {
-        mBinding.getIMainActivity().setCartVisibility(false);       // set added toolbar visibility to false was fragment is closed
+        mBinding.getIMainActivity().setCartVisibility(false);       // set added toolbar visibility to false once this fragment is closed
         super.onDestroy();
     }
 }

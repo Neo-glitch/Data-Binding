@@ -15,7 +15,7 @@
                     android:layout_height="match_parent"
                     android:background="@color/White">
 
-        // recyclerView set with custom binding adapter
+        <!-- recyclerView set with custom binding adapter-->
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"

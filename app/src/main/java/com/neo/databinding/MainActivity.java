@@ -1,6 +1,7 @@
 package com.neo.databinding;
 
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
@@ -90,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements IMainActivity {
      */
     public void checkout(){
         mBinding.progressBar.setVisibility(View.VISIBLE);
-        mCheckoutHandler = new Handler();
+        mCheckoutHandler = new Handler(getMainLooper());
         mCheckoutRunnable = new Runnable() {
             @Override
             public void run() {
@@ -280,7 +281,7 @@ public class MainActivity extends AppCompatActivity implements IMainActivity {
 
         // remove product using the serialNumber using Key shopping
         Set<String> serialNumbers = preferences.getStringSet(PreferenceKeys.shopping_cart, new HashSet<String>());
-        if (serialNumbers.size() == 1){  // if item is only product, clear it and remove the key from preferences
+        if (serialNumbers.size() == 1){  // if item is only product, clear it and remove set having this key from preferences
             editor.remove(PreferenceKeys.shopping_cart);
             editor.commit();
         } else{       // remove item from set and update preferences with new set

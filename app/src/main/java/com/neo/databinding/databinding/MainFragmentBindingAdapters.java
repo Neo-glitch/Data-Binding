@@ -11,7 +11,7 @@ import com.neo.databinding.util.Products;
 import java.util.List;
 
 /**
- * does the setting up of an adapter to a recyclerView
+ * does the setting up of an adapter to a recyclerView in MainFragment
  */
 public class MainFragmentBindingAdapters {
     public static final int NUM_COLUMNS = 2;

@@ -10,13 +10,13 @@ import androidx.databinding.Bindable;
 import com.neo.databinding.BR;
 import com.neo.databinding.IMainActivity;
 
+
+
 /**
- * obeservable class for each item in the cartItem List
+ * obeservable class for each item in the cartItem List RecylerView
  */
 public class CartItemViewModel extends BaseObservable {
-
     private static final String TAG = "CartItemViewModel";
-
     private CartItem cartItem;                      // cart item(Product and quantity of the product)
 
     @Bindable

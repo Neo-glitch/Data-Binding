@@ -3,7 +3,7 @@
     <data>
         <import type="com.neo.databinding.util.StringUtil"/>
         <import type="android.view.View"/>
-        // cartViewModel var
+        <!-- cartViewModel var-->
         <variable
             name="cartView"
             type="com.neo.databinding.models.CartViewModel"/>
@@ -50,7 +50,7 @@
                             android:layout_marginRight="8dp"
                             android:layout_marginEnd="8dp">
 
-                            // gets the cart size
+                            <!-- gets the cart size-->
                             <TextView
                                 android:layout_width="13dp"
                                 android:layout_height="13dp"
@@ -92,7 +92,7 @@
                                 android:textSize="16sp"
                                 android:textColor="@color/Black"/>
 
-                            // for showing total item quantity
+                            <!-- for showing total item quantity-->
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -100,7 +100,7 @@
                                 android:textSize="16sp"
                                 android:textColor="@color/Black"/>
 
-                            // for showing total items cost
+                            <!-- for showing total items cost-->
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
